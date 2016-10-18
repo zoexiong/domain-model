@@ -109,34 +109,50 @@ open class Job {
 // Person
 //
 open class Person {
-  open var firstName : String = ""
-  open var lastName : String = ""
-  open var age : Int = 0
-
-  fileprivate var _job : Job? = nil
-  open var job : Job? {
-    get { }
-    set(value) {
+    open var firstName : String = ""
+    open var lastName : String = ""
+    open var age : Int = 0
+    
+    
+    fileprivate var _job : Job? = nil // this variable could use any name, no need to use _job only
+    open var job : Job? {
+        get {
+            return _job
+        }
+        set(value) {
+            if age < 16{
+                print("can't have a job if age < 16")
+            } else {
+                _job = value
+            }
+        }
     }
-  }
-  
-  fileprivate var _spouse : Person? = nil
-  open var spouse : Person? {
-    get { }
-    set(value) {
+    
+    public init(firstName : String, lastName: String, age : Int) {
+        self.firstName = firstName
+        self.lastName = lastName
+        self.age = age
     }
-  }
-  
-  public init(firstName : String, lastName: String, age : Int) {
-    self.firstName = firstName
-    self.lastName = lastName
-    self.age = age
-  }
-  
-  open func toString() -> String {
-  }
+    
+    
+    fileprivate var _spouse : Person? = nil
+    open var spouse : Person? {
+        get {
+            return _spouse
+        }
+        set(value) {
+            if age < 18{
+                print("can't have a spouse if age < 18")
+            } else {
+                _spouse = value
+            }
+        }
+    }
+    
+    open func toString() -> String {
+        return "[Person: firstName:\(firstName) lastName:\(lastName) age:\(age) job:\(job) spouse:\(spouse)]"
+    }
 }
-
 ////////////////////////////////////
 // Family
 //
