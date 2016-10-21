@@ -189,4 +189,133 @@ open class Family {
     }
 }
 
+///////////////////////////
+//////// For Extra Credits
+//
 
+
+//indirect enum Money {
+//    case EUR(Double)
+//    case GBP(Double)
+//    case USD(Double)
+//    case CAN(Double)
+//    case add(Money,Money)
+//    case subtract(Money,Money)
+//    case convert(Money,String)
+//    case notValid(String)
+//}
+//
+//
+////get value of money that converted to USD
+//func getValue(_ expression: Money) -> Double?{
+//    switch expression {
+//    case let .EUR(amount):
+//        let value = amount * 2 / 3
+//        return value
+//    case let .GBP(amount):
+//        let value = amount * 2
+//        return value
+//    case let .USD(amount):
+//        let value = amount
+//        return value
+//    case let .CAN(amount):
+//        let value = amount * 4 / 5
+//        return value
+//    default:
+//        return nil
+//    }
+//}
+//
+////convert money from USD to other types and add
+//func convertAdd(_ amount1:Double, _ expression:Money) -> Double?{
+//    switch expression {
+//    case let .EUR(amount2):
+//        let value = (amount1 * 3 / 2) + amount2
+//        return value
+//    case let .GBP(amount2):
+//        let value = (amount1 / 2) + amount2
+//        return value
+//    case let .USD(amount2):
+//        let value = amount1 + amount2
+//        return value
+//    case let .CAN(amount2):
+//        let value = (amount1 * 5 / 4) + amount2
+//        return value
+//    default:
+//        return nil
+//    }
+//}
+//
+////convert money from USD to other types and subtract
+//func convertSubtract(_ amount1:Double, _ expression:Money) -> Double?{
+//    switch expression {
+//    case let .EUR(amount2):
+//        let value = (amount1 * 3 / 2) - amount2
+//        return value
+//    case let .GBP(amount2):
+//        let value = (amount1 / 2) - amount2
+//        return value
+//    case let .USD(amount2):
+//        let value = amount1 - amount2
+//        return value
+//    case let .CAN(amount2):
+//        let value = (amount1 * 5 / 4) - amount2
+//        return value
+//    default:
+//        return nil
+//    }
+//}
+//
+////operation, add or subtract, then return a money
+//func operation(_ expression: Money) -> Money {
+//    switch expression {
+//    case let .add(money1, money2):
+//        let amount1 = getValue(money1)
+//        switch money2 {
+//        case .EUR(_):
+//            let value = convertAdd(amount1!, money2)
+//            return Money.EUR(value!)
+//        case .GBP(_):
+//            let value = convertAdd(amount1!, money2)
+//            return Money.GBP(value!)
+//        case .USD(_):
+//            let value = convertAdd(amount1!, money2)
+//            return Money.USD(value!)
+//        case .CAN(_):
+//            let value = convertAdd(amount1!, money2)
+//            return Money.CAN(value!)
+//        default:
+//            return Money.notValid("not a valid money")        }
+//    case let .subtract(money1, money2):
+//        let amount1 = getValue(money1)
+//        switch money2 {
+//        case .EUR(_):
+//            let value = convertAdd(amount1!, money2)
+//            return Money.EUR(value!)
+//        case .GBP(_):
+//            let value = convertAdd(amount1!, money2)
+//            return Money.GBP(value!)
+//        case .USD(_):
+//            let value = convertAdd(amount1!, money2)
+//            return Money.USD(value!)
+//        case .CAN(_):
+//            let value = convertAdd(amount1!, money2)
+//            return Money.CAN(value!)
+//        default:
+//            return Money.notValid("not a valid money")
+//        }
+//    default:
+//        return Money.notValid("not a valid money")
+//    }
+//}
+
+//Could be used to test enum Money
+//let five = Money.GBP(5)
+//let ten = Money.USD(10)
+//let twenty = Money.CAN(20)
+//let sum = Money.add(ten, five)
+//let sub = Money.subtract(twenty,five)
+//print(five)
+//print(getValue(five)!)
+//print(operation(sum))
+//print(operation(sub))
